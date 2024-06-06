@@ -3,22 +3,25 @@ import express from 'express'
 const app = express()
 const port = process.env.PORT || 3000
 
+// Use Middleware to handle JSON
 app.use(express.json())
 
+// Initialize sample tea data
 let teaData = [
     {'id':1,'name':'Masala Tea','price':'Rs.100.00'},
     {'id':2,'name':'Ginger Tea','price':'Rs.150.00'},
     {'id':3,'name':'Lemon Tea','price':'Rs.200.00'}
 ]
 
+// Initialize ID for the upcoming tea
 let NextId = 4
 
-// Get all teas details
+// READ all tea data
 app.get('/teas', (req,res) => {
     res.status(200).send(teaData)
 })
 
-// Get tea with specific id
+// READ specific tea by its ID
 app.get('/teas/:id', (req,res) => {
     const tea = teaData.find(t => t.id === parseInt(req.params.id))
     if (tea === undefined){
@@ -29,7 +32,7 @@ app.get('/teas/:id', (req,res) => {
     }
 })
 
-// Create tea with name and price
+// CREATE new tea data
 app.post('/teas', (req,res) => {
     const {name,price} = req.body
     const tea = {"id":NextId++, name, price}
@@ -37,7 +40,7 @@ app.post('/teas', (req,res) => {
     res.status(200).send(teaData)
 })
 
-// Update tea record by id
+// UPDATE tea data
 app.put('/teas/:id', (req,res) => {
     const tea = teaData.find( t => t.id === parseInt(req.params.id))
     if (tea){
@@ -51,7 +54,7 @@ app.put('/teas/:id', (req,res) => {
     }
 })
 
-// Delete a tea record with by id
+// DELETE specific tea by its ID
 app.delete('/teas/:id', (req,res) => {
     const teaId = teaData.findIndex(t => t.id === parseInt(req.params.id))
     if (teaId !== -1){
@@ -63,7 +66,7 @@ app.delete('/teas/:id', (req,res) => {
     }
 })
 
-
+// Listen to requests on port
 app.listen( port, () => {
     console.log(`Server is running on http://127.0.0.1:${port}...`)
 })
