@@ -6,9 +6,9 @@ const port = process.env.PORT || 3000
 app.use(express.json())
 
 let teaData = [
-    {'id':1,'name':'Masala Tea','price':'Rs.100'},
-    {'id':2,'name':'Ginger Tea','price':'Rs.150'},
-    {'id':3,'name':'Lemon Tea','price':'Rs.200'}
+    {'id':1,'name':'Masala Tea','price':'Rs.100.00'},
+    {'id':2,'name':'Ginger Tea','price':'Rs.150.00'},
+    {'id':3,'name':'Lemon Tea','price':'Rs.200.00'}
 ]
 
 let NextId = 4
