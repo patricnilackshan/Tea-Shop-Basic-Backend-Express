@@ -15,7 +15,7 @@ This endpoint retrieves a list of teas. The response is a JSON array containing 
 
  ```
 
-===
+---
 
 **GET** READ specific tea by its ID
 `127.0.0.1:3000/teas/{{randomNumber}}`
@@ -30,7 +30,7 @@ This endpoint retrieves details of a specific tea identified by TeaID. The respo
 
  ```
 
-===
+---
 
 **POST** CREATE new tea data
 `127.0.0.1:3000/teas/`
@@ -85,7 +85,7 @@ The response to this request is a JSON array with objects containing the followi
 }
 ```
 
-===
+---
 
 **PUT** UPDATE tea data
 `127.0.0.1:3000/teas/{{randomNumber}}`
@@ -119,7 +119,7 @@ The response is in JSON format and has the following schema:
 }
 ```
 
-===
+---
 
 **DEL** DELETE specific tea by its ID
 `127.0.0.1:3000/teas/{{randomNumber}}`
