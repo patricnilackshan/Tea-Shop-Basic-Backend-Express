@@ -10,18 +10,28 @@
 #### **Response:**
 ``` json
 [
-  {
-    "id": 0,
-    "name": "",
-    "price": ""
-  }
+    {
+        "id": 1,
+        "name": "Masala Tea",
+        "price": "Rs.100.00"
+    },
+    {
+        "id": 2,
+        "name": "Ginger Tea",
+        "price": "Rs.150.00"
+    },
+    {
+        "id": 3,
+        "name": "Lemon Tea",
+        "price": "Rs.200.00"
+    }
 ]
  ```
 
 
 ## **GET** READ specific tea by its ID
 
-**Endpoint:** `127.0.0.1:3000/teas/{{randomNumber}}`
+**Endpoint:** `127.0.0.1:3000/teas/1`
 
 **Description:** This endpoint retrieves details of a specific tea identified by TeaID. The response will be in JSON format and will include the tea's ID, name, and price.
 
@@ -44,8 +54,8 @@
 #### **Request Body**
 ```json
 {
-    "name"  : "Foster Tea",
-    "price" : "Rs.285.58"
+    "name"  : "Choco Tea",
+    "price" : "Rs.280.00"
 }
 ```
 
@@ -66,6 +76,11 @@
         "id": 3,
         "name": "Lemon Tea",
         "price": "Rs.200.00"
+    },
+    {
+        "id": 4,
+        "name"  : "Choco Tea",
+        "price" : "Rs.280.00"
     }
 ]
  ```
@@ -73,15 +88,15 @@
 
 ## **PUT** UPDATE tea data
 
-**Endpoint:** `127.0.0.1:3000/teas/{{randomNumber}}`
+**Endpoint:** `127.0.0.1:3000/teas/4`
 
 **Description:** This endpoint allows you to update a specific tea using the tea's unique identifier.
 
 #### **Request Body**
 ```json
 {
-    "name"  : "Aric Tea",
-    "price" : "Rs.463.26"
+    "name"  : "Milk Tea",
+    "price" : "Rs.300.00"
 }
 ```
 
@@ -89,15 +104,15 @@
 ``` json
 {
     "id": 4,
-    "name": "Quincy Tea",
-    "price": "Rs.335.54"
+    "name"  : "Milk Tea",
+    "price" : "Rs.300.00"
 }
  ```
 
 
 ## **DELETE** DELETE specific tea by its ID
 
-**Endpoint:** `127.0.0.1:3000/teas/{{randomNumber}}`
+**Endpoint:** `127.0.0.1:3000/teas/1`
 
 **Description:** The endpoint makes an HTTP DELETE request to delete a specific tea item identified by the provided random number.
 
@@ -113,6 +128,11 @@
         "id": 3,
         "name": "Lemon Tea",
         "price": "Rs.200.00"
+    },
+    {
+        "id": 4,
+        "name"  : "Milk Tea",
+        "price" : "Rs.300.00"
     }
 ]
  ```
