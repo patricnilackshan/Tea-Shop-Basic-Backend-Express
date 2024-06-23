@@ -1,9 +1,14 @@
-# TeaShopBasicBackend
+# **Tea Shop Basic Backend**
 
-**GET** READ all tea data
-`127.0.0.1:3000/teas`
-This endpoint retrieves a list of teas. The response is a JSON array containing objects with the keys "id", "name", and "price".
+<br>
 
+## **GET** READ all tea data
+
+**Endpoint:** `127.0.0.1:3000/teas`
+
+**Description:** This endpoint retrieves a list of teas. The response is a JSON array containing objects with the keys "id", "name", and "price".
+
+#### **Response:**
 ``` json
 [
   {
@@ -15,12 +20,13 @@ This endpoint retrieves a list of teas. The response is a JSON array containing 
 
  ```
 
----
 
-**GET** READ specific tea by its ID
-`127.0.0.1:3000/teas/{{randomNumber}}`
-This endpoint retrieves details of a specific tea identified by TeaID. The response will be in JSON format and will include the tea's ID, name, and price.
+## **GET** READ specific tea by its ID
+**Endpoint:** `127.0.0.1:3000/teas/{{randomNumber}}`
 
+**Description:** This endpoint retrieves details of a specific tea identified by TeaID. The response will be in JSON format and will include the tea's ID, name, and price.
+
+#### **Response:**
 ``` json
 {
     "id": 1,
@@ -30,32 +36,19 @@ This endpoint retrieves details of a specific tea identified by TeaID. The respo
 
  ```
 
----
 
-**POST** CREATE new tea data
-`127.0.0.1:3000/teas/`
-The POST request to `/teas/` endpoint allows the client to add a new tea with the specified name and price. The request should include a JSON payload with the "name" and "price" fields.
+## **POST** CREATE new tea data
+**Endpoint:** `127.0.0.1:3000/teas/`
+**Description:** The POST request to `/teas/` endpoint allows the client to add a new tea with the specified name and price. The request should include a JSON payload with the "name" and "price" fields.
 
-### Request Body
-
-- `name` (string, required): The name of the tea.
-    
-- `price` (string, required): The price of the tea.
-    
-
-### Response
-
-The response to this request is a JSON array with objects containing the following fields:
-
-- `id` (number): The unique identifier of the tea.
-    
-- `name` (string): The name of the tea.
-    
-- `price` (string): The price of the tea.
-    
-
-#### JSON Schema
-
+#### **Request Body**
+```json
+{
+    "name"  : "Foster Tea",
+    "price" : "Rs.285.58"
+}
+```
+#### **Response** 
 ``` json
 [
     {
@@ -76,32 +69,23 @@ The response to this request is a JSON array with objects containing the followi
 ]
 
  ```
+ The response to this request is a JSON array with objects containing the following fields:
 
-### Body raw (json)
+
+## **PUT** UPDATE tea data
+**Endpoint:** `127.0.0.1:3000/teas/{{randomNumber}}`
+**Description:** This endpoint allows you to update a specific tea using the tea's unique identifier.
+
+#### **Request Body**
 ```json
 {
-    "name"  : "Foster Tea",
-    "price" : "Rs.285.58"
+    "name"  : "Aric Tea",
+    "price" : "Rs.463.26"
 }
 ```
 
----
 
-**PUT** UPDATE tea data
-`127.0.0.1:3000/teas/{{randomNumber}}`
-This endpoint allows you to update a specific tea using the tea's unique identifier.
-
-### Request Body
-
-- `name` (string, required): The name of the tea.
-    
-- `price` (string, required): The price of the tea.
-    
-
-### Response
-
-The response is in JSON format and has the following schema:
-
+#### **Response**
 ``` json
 {
     "id": 4,
@@ -111,24 +95,16 @@ The response is in JSON format and has the following schema:
 
  ```
 
-### Body raw (json)
-```json
-{
-    "name"  : "Aric Tea",
-    "price" : "Rs.463.26"
-}
-```
+
+
 
 ---
 
-**DEL** DELETE specific tea by its ID
-`127.0.0.1:3000/teas/{{randomNumber}}`
-The endpoint makes an HTTP DELETE request to delete a specific tea item identified by the provided random number.
+## **DELETE** DELETE specific tea by its ID
+**Endpoint:** `127.0.0.1:3000/teas/{{randomNumber}}`
+**Description:** The endpoint makes an HTTP DELETE request to delete a specific tea item identified by the provided random number.
 
-### Response
-
-The response is in JSON format with a status code of 200. The response body follows the schema:
-
+#### **Response**
 ``` json
 [
     {
